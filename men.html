@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+      <link href="css/bootstrap.min.css" rel="stylesheet">
+       <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+         <!-- <link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet"> -->
+         <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+         <link href="css/style.css" rel="stylesheet">
+         <link href="css/mens.css" rel="stylesheet">
+      <title>Wildcraft</title>
+      <meta charset="utf-8">
+  <script type="text/javascript">
+
+       $(document).ready(function() {
+         var controlTab=false;
+           $("#btn").click(function() {
+             controlTab=true;
+               $("#myModal").modal("show");
+           });
+
+           $('#myModal').on('shown.bs.modal', function() {
+               $('#textareaID').focus();
+           })
+
+           $("#myModal").on("hidden.bs.modal", function() {
+               // console.log("working");
+               controlTab=false;
+               $('#launchModalButton').focus();
+           });
+
+           $('body').on('keydown', function(e) {
+               var jqTarget = $(e.target);
+               if (e.keyCode == 9 && controlTab==true) {
+
+                   var jqVisibleInputs = $(':input:visible');
+                   var jqFirst = jqVisibleInputs.first();
+                   var jqLast = jqVisibleInputs.last();
+
+                   if (!e.shiftKey && jqTarget.is(jqLast)) {
+                       e.preventDefault();
+                       jqFirst.focus();
+                   } else if (e.shiftKey && jqTarget.is(jqFirst)) {
+                       e.preventDefault();
+                       jqLast.focus();
+                   }
+               }
+           });
+
+
+       });
+   </script>
+  </head>
+  <body>
+<nav class="navbar navbar-default" >
+  <div class="container-fluid" style="padding-top:0.5%">
+    <div class="navbar-header">
+        <img style="position:relative;float:left" height="50"  src="./images/logo.png"  alt="">
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="#">PACKS</a></li>
+      <li><a href="#">MEN</a></li>
+      <li><a href="#">WOMEN</a></li>
+    </ul>
+    <div style="padding-right:1%;padding-top:0.5%" class="nav navbar-right">
+      <button class="btn btn-default" type="button" class="btn btn-primary btn" id="launchModalButton" data-toggle="modal" data-target="#myModal">
+        login
+      </button>
+    </div>
+    <div id="shopping_cart" class="nav navbar-right">
+     <span class="glyphicon glyphicon-shopping-cart"></span>
+    </div>
+
+      <form class="navbar-form navbar-right">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search">
+        <div class="input-group-btn">
+          <button class="btn btn-default" type="submit">
+            <i id="nav_search_icon_color" class="glyphicon glyphicon-search"></i>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</nav>
+
+  <div class="container-fluid" style="height:100%">
+    <div class="row" style="height:100%">
+      <div class="options_bar">
+        <div class="price_main">
+          <span tabindex="0" class="price_heading">PRICE</span>
+          <div class="price_box">
+            <div tabindex="0" class="price_list">
+              Rs 0 - Rs 1000
+            </div>
+            <div tabindex="0" class="price_list">
+              Rs 1000 - Rs 2000
+            </div>
+            <div tabindex="0" class="price_list">
+              Rs 2000 - Rs 3000
+            </div>
+          </div>
+        </div>
+        <div class="size_main">
+          <span tabindex="0" class="size_heading">SIZE</span>
+          <div class="container-fluid row" style="margin-left:1%">
+            <div  tabindex="0" class="col-sm-3  size_list"   >
+              XS
+            </div>
+            <div tabindex="0" style="margin-top:1%" class="col-sm-3 col-sm-offset-1 size_list" >
+              S
+            </div>
+            <div tabindex="0" style="margin-top:1%" class="col-sm-3 col-sm-offset-1 size_list" >
+              M
+            </div>
+            <div tabindex="0" style="margin-top:1%" class="col-sm-3  size_list" >
+              L
+            </div>
+            <div tabindex="0" style="margin-top:1%" class="col-sm-3 col-sm-offset-1 size_list" >
+              XL
+            </div>
+            <div tabindex="0" style="margin-top:1%" class="col-sm-3 col-sm-offset-1 size_list" >
+              XXL
+            </div>
+          </div>
+        </div>
+        <div class="collections_main">
+          <span tabindex="0" class="collections_heading">COLLECTIONS</span>
+          <div class="container-fluid row" style="margin-left:1%">
+            <div class="collections_box">
+              <div tabindex="0" class="collections_list">
+                Hypacool
+              </div>
+              <div tabindex="0" class="collections_list">
+                Hypawarm
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="content_bar">
+          <div class="content_bar_main container-fluid">
+            <div tabindex="0" class="row content_title">
+              <h2>T-Shirts & Shirts</h2>
+            </div>
+            <div class="row" style="height:98%;overflow: scroll;padding-bottom:8%">
+              <div tabindex="0" class="col-sm-3 content_list">
+                <img src="../images/coat.png" width="100%" height="60%">
+                <div class="content_description row">
+                  <span class="col-sm-12 product_name">Men's Shirt Jacket - Light Beige</span>
+                  <span class="col-sm-12 product-category">T-Shirts &amp; Shirts</span>
+                </div>
+                <div class="col-sm-12 row">
+                  <span class="col-sm-12 product_price">Rs 2202</span>
+                </div>
+                <div class="col-sm-12 row">
+                  <div class="add_to_cart">
+                    Add To Cart
+                  </div>
+                </div>
+              </div>
+
+              <div tabindex="0" class="col-sm-3 content_list">
+                <img src="../images/mens2.png" width="100%" height="60%">
+                <div class="content_description row">
+                  <span class="col-sm-12 product_name">Men's Shirt Jacket - Light Beige</span>
+                  <span class="col-sm-12 product-category">T-Shirts &amp; Shirts</span>
+                </div>
+                <div class="col-sm-12 row">
+                  <span class="col-sm-12 product_price">Rs 2202</span>
+                </div>
+                <div class="col-sm-12 row">
+                  <div class="add_to_cart">
+                    Add To Cart
+                  </div>
+                </div>
+              </div>
+              <div tabindex="0" class="col-sm-3 content_list">
+                <img src="../images/mens3.png" width="100%" height="60%">
+                <div class="content_description row">
+                  <span class="col-sm-12 product_name">Men's Shirt Jacket - Light Beige</span>
+                  <span class="col-sm-12 product-category">T-Shirts &amp; Shirts</span>
+                </div>
+                <div class="col-sm-12 row">
+                  <span class="col-sm-12 product_price">Rs 2202</span>
+                </div>
+                <div class="col-sm-12 row">
+                  <div class="add_to_cart">
+                    Add To Cart
+                  </div>
+                </div>
+              </div>
+              <div tabindex="0" class="col-sm-3 content_list">
+                <img src="../images/mens4.png" width="100%" height="60%">
+                <div class="content_description row">
+                  <span class="col-sm-12 product_name">Men's Shirt Jacket - Light Beige</span>
+                  <span class="col-sm-12 product-category">T-Shirts &amp; Shirts</span>
+                </div>
+                <div class="col-sm-12 row">
+                  <span class="col-sm-12 product_price">Rs 2202</span>
+                </div>
+                <div class="col-sm-12 row">
+                  <div class="add_to_cart">
+                    Add To Cart
+                  </div>
+                </div>
+              </div>
+              <div tabindex="0" class="col-sm-3 content_list">
+                <img src="../images/mens5.png" width="100%" height="60%">
+                <div class="content_description row">
+                  <span class="col-sm-12 product_name">Men's Shirt Jacket - Light Beige</span>
+                  <span class="col-sm-12 product-category">T-Shirts &amp; Shirts</span>
+                </div>
+                <div class="col-sm-12 row">
+                  <span class="col-sm-12 product_price">Rs 2202</span>
+                </div>
+                <div class="col-sm-12 row">
+                  <div class="add_to_cart">
+                    Add To Cart
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+  <footer is="footer_allpages" class="container-fluid">
+
+      <ul class="ul_hm">
+          <li class="fhead"><a title="Shop" href="#">Shop</a></li>
+          <li class="footer_items"><a title="Bagpacks" href="#">Bagpacks</a></li>
+          <li class="footer_items"><a title="Luggage" href="#">Luggage</a></li>
+          <li class="footer_items"><a title="Duffle" href="#">Duffle</a></li>
+          <li class="footer_items"><a title="Business_Bags" href="#">Business Bags</a></li>
+      </ul>
+
+      <ul class="ul_hm">
+          <li class="fhead"> <a title="Activity" href="#">Activity</a></li>
+          <li class="footer_items"><a title="Travels" href="#">Travel</a></li>
+          <li class="footer_items"><a title="Trekking" href="#">Trekking</a></li>
+          <li class="footer_items"><a title="School" href="#">School</a></li>
+          <li class="footer_items"><a title="Business" href="#">Business</a></li>
+      </ul>
+
+      <ul class="ul_hm">
+          <li class="fhead"> <a title="Support" href="#">Support</a></li>
+          <li class="footer_items"><a title="Payment_Options" href="#">Payment Options</a></li>
+          <li class="footer_items"><a title="Shipping_info" href="#">Shipping info</a></li>
+          <li class="footer_items"><a title="Returns_Exchange" href="#">Returns and Exchanges</a></li>
+          <li class="footer_items"><a title="Order_Status" href="#">Order Status</a></li>
+      </ul>
+
+      <ul class="ul_hm">
+          <li class="fhead" id="footerhead"> <a title="Contact" href="#">Contact Us</a></li>
+          <li class="footer_items"><a title="Feedback" href="#">Feedback</a></li>
+          <li class="footer_items"><a title="Order_Enquiries" href="#">Order Enquiries</a></li>
+          <li class="footer_items"><a title="Corporate_Enquiries" href="#">Corporate Enquiries</a></li>
+      </ul>
+
+      <div class="social-media">
+        <p>
+         Follow us on:
+       </p>
+
+    <div id="social_media_icons" class="social_media_icons">
+
+      <a href="#"><span class="fb"></span></a>
+      <a href="#"><span class="insta"></span></a>
+      <a href="#"><span class="twitter"></span></a>
+      <a href="#"><span class="youtube"></span></a>
+    </div>
+
+      </div>
+
+
+      </footer>
+
+      <!-- <div class="container-fluid"> -->
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog" style="left:0%">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h4 class="modal-title" id="myModalLabel">Modal</h4>
+                  </div>
+                  <div class="modal-body">
+                      <form>
+                          <div class="form-group">
+                              <input id="textareaID" class="form-control" id="contactinfo" role="form" aria-label="update your contact infrmation" placeholder="contact details"></input>
+                          </div>
+                          <div class="form-group">
+                              <label for="firstname" class="form-control-label">FIRST NAME</label>
+                              <input type="text" class="form-control" id="firstname" role="form" aria-label="update your first name">
+                          </div>
+                          <div class="form-group">
+                              <label for="lastname" class="form-control-label">LAST NAME</label>
+                              <input type="text" class="form-control" id="lastname" role="form" aria-label="update your lastname">
+                          </div>
+                          <div class="form-group">
+                              <label for="emailaddress" class="form-control-label">EMAIL ADDRESS</label>
+                              <input type="email" class="form-control" id="emailaddress" role="form" aria-label="update your email address">
+                          </div>
+
+                          <!--
+     <button type="button" class="btn btn-primary"  data-dismiss="modal" role="button" aria-label="SubmitYour Information">SUBMIT</button>
+    <button type="button" class="btn btn-primary" data-dismiss="modal" role="button" aria-label="Close">CANCEL</button> -->
+
+                      </form>
+                  </div>
+                  <div class="modal-footer">
+
+                      <button type="button" class="btn btn-primary" data-dismiss="modal" role="button" aria-label="SubmitYour Information">SUBMIT</button>
+                      <button type="button" class="btn btn-primary" data-dismiss="modal" role="button" aria-label="Close">CANCEL</button>
+                  </div>
+              </div>
+              <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
+    <!-- </div> -->
+  </body>
+</html>
